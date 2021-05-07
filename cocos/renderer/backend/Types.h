@@ -60,9 +60,26 @@ enum class VertexFormat : uint32_t
     INT3,
     INT2,
     INT,
+    SHORT4,
+    SHORT3,
+    SHORT2,
+    SHORT,
+    BYTE4,
+    BYTE3,
+    BYTE2,
+    BYTE,
+    UINT4,
+    UINT3,
+    UINT2,
+    UINT,
     USHORT4,
+    USHORT3,
     USHORT2,
-    UBYTE4
+    USHORT,
+    UBYTE4,
+    UBYTE3,
+    UBYTE2,
+    UBYTE
 };
 
 /** @typedef backend::PixelFormat

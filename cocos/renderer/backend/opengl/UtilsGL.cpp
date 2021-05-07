@@ -29,31 +29,56 @@
 CC_BACKEND_BEGIN
 
 
-GLenum UtilsGL::toGLAttributeType(VertexFormat vertexFormat)
-{
-    GLenum ret = GL_INT;
-    switch (vertexFormat)
-    {
-    case VertexFormat::FLOAT4:
-    case VertexFormat::FLOAT3:
-    case VertexFormat::FLOAT2:
-    case VertexFormat::FLOAT:
-        ret = GL_FLOAT;
-        break;
-    case VertexFormat::INT4:
-    case VertexFormat::INT3:
-    case VertexFormat::INT2:
-    case VertexFormat::INT:
-        ret = GL_INT;
-        break;
-    case VertexFormat::UBYTE4:
-        ret = GL_UNSIGNED_BYTE;
-        break;
-    default:
-        break;
-    }
-    return ret;
-}
+        GLenum UtilsGL::toGLAttributeType(VertexFormat vertexFormat) {
+            GLenum ret = GL_INT;
+            switch (vertexFormat) {
+                case VertexFormat::FLOAT4:
+                case VertexFormat::FLOAT3:
+                case VertexFormat::FLOAT2:
+                case VertexFormat::FLOAT:
+                    ret = GL_FLOAT;
+                    break;
+                case VertexFormat::INT4:
+                case VertexFormat::INT3:
+                case VertexFormat::INT2:
+                case VertexFormat::INT:
+                    ret = GL_INT;
+                    break;
+                case VertexFormat::SHORT4:
+                case VertexFormat::SHORT3:
+                case VertexFormat::SHORT2:
+                case VertexFormat::SHORT:
+                    ret = GL_SHORT;
+                    break;
+                case VertexFormat::BYTE4:
+                case VertexFormat::BYTE3:
+                case VertexFormat::BYTE2:
+                case VertexFormat::BYTE:
+                    ret = GL_BYTE;
+                    break;
+                case VertexFormat::UINT4:
+                case VertexFormat::UINT3:
+                case VertexFormat::UINT2:
+                case VertexFormat::UINT:
+                    ret = GL_UNSIGNED_INT;
+                    break;
+                case VertexFormat::USHORT4:
+                case VertexFormat::USHORT3:
+                case VertexFormat::USHORT2:
+                case VertexFormat::USHORT:
+                    ret = GL_UNSIGNED_SHORT;
+                    break;
+                case VertexFormat::UBYTE4:
+                case VertexFormat::UBYTE3:
+                case VertexFormat::UBYTE2:
+                case VertexFormat::UBYTE:
+                    ret = GL_UNSIGNED_BYTE;
+                    break;
+                default:
+                    break;
+            }
+            return ret;
+        }
 
 GLsizei UtilsGL::getGLAttributeSize(VertexFormat vertexFormat)
 {
@@ -62,19 +87,38 @@ GLsizei UtilsGL::getGLAttributeSize(VertexFormat vertexFormat)
     {
     case VertexFormat::FLOAT4:
     case VertexFormat::INT4:
+    case VertexFormat::SHORT4:
+    case VertexFormat::BYTE4:
+    case VertexFormat::UINT4:
+    case VertexFormat::USHORT4:
     case VertexFormat::UBYTE4:
         ret = 4;
         break;
     case VertexFormat::FLOAT3:
     case VertexFormat::INT3:
+    case VertexFormat::SHORT3:
+    case VertexFormat::BYTE3:
+    case VertexFormat::UINT3:
+    case VertexFormat::USHORT3:
+    case VertexFormat::UBYTE3:
         ret = 3;
         break;
     case VertexFormat::FLOAT2:
     case VertexFormat::INT2:
+    case VertexFormat::SHORT2:
+    case VertexFormat::BYTE2:
+    case VertexFormat::UINT2:
+    case VertexFormat::USHORT2:
+    case VertexFormat::UBYTE2:
         ret = 2;
         break;
     case VertexFormat::FLOAT:
     case VertexFormat::INT:
+    case VertexFormat::SHORT:
+    case VertexFormat::BYTE:
+    case VertexFormat::UINT:
+    case VertexFormat::USHORT:
+    case VertexFormat::UBYTE:
         ret = 1;
         break;
     default:
